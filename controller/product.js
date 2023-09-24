@@ -40,7 +40,7 @@ const createProduct = asyncHandler(async (req, res) => {
 const updatedProductById = asyncHandler(async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(req.body);
+    // console.log(req.body);
     const product = await Product.findByIdAndUpdate(id, req.body, {
       new: true,
     });

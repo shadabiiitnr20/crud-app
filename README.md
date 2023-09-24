@@ -41,3 +41,27 @@
 - configure cors to connect to front-end
 
 
+## Front End Part
+- keep the backend folder up and running
+- start a project with npx create react app
+- install tailwindCSS
+- Configure routing thru react router dom - {BrowserRouter, Routes, Route}
+- Make 3 pages - Home, SearchPage, EditPage
+- Make NavBar, link to homePage
+- get the products from the getProducts URL using axios and useEffect
+- create a Loading and Products state variable
+- Create a Prodcut component and pass all the products from HomePage to Products component
+- Display all the products and style the components
+- create Edit and Delete button
+- make a create a product button on HomePage and link it to Create page
+- on Create Page - create a form, capture the data and send the data to backend using axios 
+- give validations on the form
+- implement react-toastify
+- make the edit page URL for eact product
+- make the edit page, use axios.post method and using onChange={(e) => {...product, propert: e.target.value}} update the product.
+- Delete the product using axios.delete. Can use react sweet alert.
+
+
+
+
+

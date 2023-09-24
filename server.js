@@ -9,15 +9,15 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 const MONGO_URL = process.env.MONGO_URL;
-//const FRONTEND_URL = process.env.FRONTEND_URL;
+const FRONTEND_URL = process.env.FRONTEND_URL;
 
-// const corsOptions = {
-//   origin: "FRONTEND URL FROM .ENV FILE",
-//   optionsSuccessStatus: 200
-// }
+const corsOptions = {
+  origin: FRONTEND_URL,
+  optionsSuccessStatus: 200,
+};
 
 //add corsOptions
-app.use(cors());
+app.use(cors(corsOptions));
 app.use("/api/products", productRoute);
 app.use(errorMiddleware);
 
@@ -29,8 +29,8 @@ app.get("/", (req, res) => {
 main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(MONGO_URL);
-  console.log("DB connected");
+  // console.log("DB connected");
   app.listen(PORT, () => {
-    console.log(`App is running on port: ${PORT}`);
+    // console.log(`App is running on port: ${PORT}`);
   });
 }
